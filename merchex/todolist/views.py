@@ -8,10 +8,4 @@ def home(request):
     tasks = Task.objects.all()
     print(tasks)
     # template = loader.get_template('index.html')
-    return HttpResponse(f"""
-                         <h1>Task !</h1>
-                         <p>Nos tasks de la journée<p>
-                         <ul>
-                             <li>{tasks[0].name_task}</li>
-                          </ul>
-                        """)
+    return render(request, 'index.html')
