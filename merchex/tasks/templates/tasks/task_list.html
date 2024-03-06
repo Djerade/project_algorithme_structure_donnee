@@ -8,7 +8,7 @@
     <h3>Lists des tâches</h3>
     {% for task in tasks %}
     <p>
-      {{ forloop.counter }}. {{ task.name }} - {{ task.get_status_display }} (<a
+      {{ forloop.counter }}. {{ task.title }} - {{ task.description }} (<a
         href="{% url 'tasks:task_update' task.id %}"
         >Modifier</a
       >

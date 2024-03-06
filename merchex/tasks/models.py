@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 
 class Priority(models.TextChoices):
-    VERY_IMPORTANT = 'v', "important"
+    VERY_IMPORTANT = 'v', "très important"
     LESS= 'm', "moins"
     IMPORTAN = 'i', "Important"
     
