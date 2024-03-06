@@ -1,7 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
     <title>
       {% if object %}Modifier tâche{% else %} Nouvelle tâche{% endif %}
     </title>
