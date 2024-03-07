@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Voir plus</title>
-  </head>
-  <body>
-    <p>
-      : {{ task.title }} |
-      <a href="{% url 'tasks:task_update' task.id %}">Modifier</a> |
-      <a href="{% url 'tasks:task_delete' task.id %}">Supprimer</a>
-    </p>
-    <p>Description: {{ task.description }}</p>
-    <p>
-      <a href="{% url 'tasks:task_list' %}">View All Tasks</a> |
-      <a href="{% url 'tasks:task_create'%}">New Task</a>
-    </p>
-  </body>
-</html>
+{% extends "_base.html" %} {% block content %}
+<p>
+  : {{ task.title }} |
+  <a href="{% url 'tasks:task_update' task.id %}">Modifier</a> |
+  <a href="{% url 'tasks:task_delete' task.id %}">Supprimer</a>
+</p>
+<p>Description: {{ task.description }}</p>
+<p>
+  <a href="{% url 'tasks:task_list' %}">Toutes les tâche</a> |
+  <a href="{% url 'tasks:task_create'%}">Nouvelle tâche</a>
+</p>
+{% endblock content %}
