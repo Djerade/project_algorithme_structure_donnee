@@ -4,7 +4,6 @@ from .models import Task
 from .forms import TaskForm
 
 
-# Class Based Views
 from django.views.generic import ListView, DetailView, \
     CreateView, UpdateView, DeleteView
 
