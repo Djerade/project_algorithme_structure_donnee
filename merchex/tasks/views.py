@@ -1,22 +1,37 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse, reverse_lazy
-
+from datetime import datetime
 from .models import Task
 from .forms import TaskForm
-
-
 from django.views.generic import ListView, DetailView, \
     CreateView, UpdateView, DeleteView
+
+
+
+
+
 
 listTask = []
 listTask = Task.objects.all()
 
 
+liste = []
     
 
 print('--------------------------')
+for task in  listTask:
+    objectTask = {}
+    objectTask["i"]= task.id
+    objectTask["title"]= task.title
+    objectTask["description"]= task.description
+    objectTask["category"]= task.category
+    objectTask["date"]= task.date
+    objectTask["priority"]= task.priority
+    liste.append(objectTask)
+    
 
-
+for l in liste:
+    print(l)
 print('--------------------------')
 
 
