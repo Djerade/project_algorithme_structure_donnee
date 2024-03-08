@@ -8,11 +8,21 @@ from .forms import TaskForm
 from django.views.generic import ListView, DetailView, \
     CreateView, UpdateView, DeleteView
 
+listTask = []
+listTask = Task.objects.all()
+
+
+    
+
+print('--------------------------')
+
+
+print('--------------------------')
 
 
 class TaskListView(ListView):
     model = Task
-    context_object_name = 'tasks'
+    context_object_name = 'listTask'
     
 
 class TaskDetailView(DetailView):

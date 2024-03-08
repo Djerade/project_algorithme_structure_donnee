@@ -11,7 +11,7 @@ class Priority(models.TextChoices):
     
 class Category(models.TextChoices):
     PROFESSIONEL = 'pr', "Professionel"
-    PERSONNEL= 'P', "Personnel"
+    PERSONNEL= 'p', "Personnel"
     SOCIAL = 's', "Social"
 
 
