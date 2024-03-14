@@ -12,10 +12,16 @@ from django.views.generic import ListView, DetailView, \
 listTask = []
 listTask = Task.objects.all()
 
+listTrier = Task.objects.order_by("date")
+
+
+
 
     
 
 print('--------------------------')
+for task in listTrier:
+    print(task.date)
 for task in  listTask:
     objectTask = {}
     objectTask["i"]= task.id
@@ -24,9 +30,6 @@ for task in  listTask:
     objectTask["category"]= task.category
     objectTask["date"]= task.date
     objectTask["priority"]= task.priority
-
-
-
 print('--------------------------')
 
 
