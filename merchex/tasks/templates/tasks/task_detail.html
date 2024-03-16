@@ -1,5 +1,5 @@
 {% extends "_base.html" %} {% block content %}
-<div>
+<div class="mx-auto pt-5">
   <div>
     {% comment %}
     <p>
@@ -12,10 +12,12 @@
       class="block font-sans text-center text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
       {{ task.title }}
     </h4>
-    <p
-      class="block font-sans text-center text-md antialiased font-medium leading-snug tracking-normal text-blue-gray-900">
-      {{ task.description }}
-    </p>
+    <div class="w-96 h-10 p-2 shadow-md rounded-xl bg-gray-50">
+      <p
+        class="font-sans text-center text-md antialiased font-medium leading-snug tracking-normal text-blue-gray-900">
+        {{ task.description }}
+      </p>
+    </div>
 
     <p>
       <a href="{% url 'tasks:task_list' %}">Toutes les tâche</a> |
