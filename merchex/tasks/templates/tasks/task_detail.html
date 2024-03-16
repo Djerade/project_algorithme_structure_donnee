@@ -1,12 +1,26 @@
 {% extends "_base.html" %} {% block content %}
-<p>
-  : {{ task.title }} |
-  <a href="{% url 'tasks:task_update' task.id %}">Modifier</a> |
-  <a href="{% url 'tasks:task_delete' task.id %}">Supprimer</a>
-</p>
-<p>Description: {{ task.description }}</p>
-<p>
-  <a href="{% url 'tasks:task_list' %}">Toutes les tâche</a> |
-  <a href="{% url 'tasks:task_create'%}">Nouvelle tâche</a>
-</p>
+<div>
+  <div>
+    {% comment %}
+    <p>
+      {{ task.title }} |
+      <a href="{% url 'tasks:task_update' task.id %}">Modifier</a> |
+      <a href="{% url 'tasks:task_delete' task.id %}">Supprimer</a>
+    </p>
+    {% endcomment %}
+    <h4
+      class="block font-sans text-center text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+      {{ task.title }}
+    </h4>
+    <p
+      class="block font-sans text-center text-md antialiased font-medium leading-snug tracking-normal text-blue-gray-900">
+      {{ task.description }}
+    </p>
+
+    <p>
+      <a href="{% url 'tasks:task_list' %}">Toutes les tâche</a> |
+      <a href="{% url 'tasks:task_create'%}">Nouvelle tâche</a>
+    </p>
+  </div>
+</div>
 {% endblock content %}
