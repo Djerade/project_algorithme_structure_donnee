@@ -4,32 +4,45 @@ from datetime import datetime
 import time
 import queue
 from queue import Queue
+
+from tasks.stack_class import Stack
 from .models import Task
 from .forms import TaskForm
 from django.views.generic import ListView, DetailView, \
     CreateView, UpdateView, DeleteView
 
 listTask = []
-listTask = Task.objects.all()
+listTask = Task.objects.all().order_by("date")
+listTrier = Task.objects.all().order_by("priority")
 
-listTrier = Task.objects.order_by("date")
+stack_task = Stack()
+
+for task in listTrier:
+    print(task)
+    # stack_task.add_task(task)
 
 
-
+listObjet = []
 
     
 
 print('--------------------------')
-for task in listTrier:
-    print(task.date)
+# for task in listTrier:
+#     print(task.date)
 for task in  listTask:
     objectTask = {}
-    objectTask["i"]= task.id
+    objectTask["id"]= task.id
     objectTask["title"]= task.title
     objectTask["description"]= task.description
     objectTask["category"]= task.category
     objectTask["date"]= task.date
     objectTask["priority"]= task.priority
+    listObjet.append(objectTask)
+    
+
+
+
+print(stack_task.items)
 print('--------------------------')
 
 
