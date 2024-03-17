@@ -17,9 +17,17 @@ listTrier = Task.objects.all().order_by("priority")
 
 stack_task = Stack()
 
-for task in listTrier:
-    print(task)
-    # stack_task.add_task(task)
+for task in listTrier[::-1]:
+    stack_task.add_task(task)
+    
+    
+    
+    # print(x.priority)
+# for task in listTrier:
+#     # print(task.priority)
+#     stack_task.add_task(task)
+
+
 
 
 listObjet = []
@@ -42,7 +50,10 @@ for task in  listTask:
 
 
 
-print(stack_task.items)
+for task in stack_task.items:
+     print(task.priority)
+    
+    
 print('--------------------------')
 
 

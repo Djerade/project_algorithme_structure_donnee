@@ -5,8 +5,8 @@ import datetime
 
 class Priority(models.TextChoices):
     VERY_IMPORTANT = 'v', "élévée"
-    LESS= 'm', "moyenne"
-    IMPORTAN = 'i', "moins"
+    IMPORTANT = 'i', "moyenne"
+    LESS= 'l', "faible"
     
     
 class Category(models.TextChoices):
