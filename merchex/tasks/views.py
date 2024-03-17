@@ -20,7 +20,9 @@ stack_task = Stack()
 for task in listTrier[::-1]:
     stack_task.add_task(task)
     
-    
+
+listTask = stack_task.items
+# print(type(stack_task.items))
     
     # print(x.priority)
 # for task in listTrier:
@@ -50,8 +52,8 @@ for task in  listTask:
 
 
 
-for task in stack_task.items:
-     print(task.priority)
+for task in listTask:
+      print(task)
     
     
 print('--------------------------')

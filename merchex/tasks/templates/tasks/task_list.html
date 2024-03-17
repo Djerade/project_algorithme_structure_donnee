@@ -9,7 +9,7 @@
       role="tablist">
       <li class="mr-2" role="presentation">
         <button
-          class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
+          class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent text-slate-700 border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
           id="profile-tab"
           data-tabs-target="#profile"
           type="button"
@@ -63,11 +63,12 @@
       id="profile"
       role="tabpanel"
       aria-labelledby="profile-tab">
+    
       <div
         class="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
         <nav
           class="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
-          {% for task in listTask %}
+          {% for task in listTask %} 
            <a href="{% url 'tasks:task_detail' task.id %}">
               <div
                 role="button"

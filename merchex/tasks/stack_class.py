@@ -22,3 +22,6 @@ class Stack:
     
     def size_stack(self):
         return len(self.items)
+    
+    def get_all(self):
+        return self.items
