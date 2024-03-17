@@ -5,8 +5,8 @@ import datetime
 
 class Priority(models.TextChoices):
     VERY_IMPORTANT = 'v', "élévée"
-    LESS= 'm', "moyenne"
-    IMPORTAN = 'i', "moins"
+    IMPORTANT = 'i', "moyenne"
+    LESS= 'l', "faible"
     
     
 class Category(models.TextChoices):
@@ -23,5 +23,5 @@ class Task(models.Model):
     date = models.DateField(verbose_name="Date d'échéance", default=datetime.date.today)
 
     def __str__(self):
-        return self.title+"  "+ self.description +"  "
+        return self.title+"  "+ self.description +"  " + self.priority +"  "
     

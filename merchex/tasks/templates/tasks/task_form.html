@@ -1,4 +1,4 @@
-{% extends "_base.html" %} {% block content %}
+{% extends "_base.html" %} {% block content %} {% load widget_tweaks %}
 <div class="mx-auto pt-5">
   <div
     class="relative flex flex-col text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border">
@@ -13,8 +13,17 @@
       method="post"
       enctype="multipart/form-data"
       class="max-w-screen-lg mt-8 mb-2 w-80 sm:w-96">
+<<<<<<< HEAD
       {% csrf_token %} {{ form }}
 
+=======
+      {% comment %}
+      <div class="flex flex-col gap-6 mb-1">
+        {% csrf_token %} {{ form.as_p }}
+      </div>
+      {% endcomment %}
+      <div class="flex flex-col gap-6 mb-1">{% csrf_token %} {{ form }}</div>
+>>>>>>> dev
       <button
         type="submit"
         value="Submit"
