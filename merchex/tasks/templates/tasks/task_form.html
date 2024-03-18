@@ -13,17 +13,12 @@
       method="post"
       enctype="multipart/form-data"
       class="max-w-screen-lg mt-8 mb-2 w-80 sm:w-96">
-<<<<<<< HEAD
-      {% csrf_token %} {{ form }}
-
-=======
       {% comment %}
       <div class="flex flex-col gap-6 mb-1">
         {% csrf_token %} {{ form.as_p }}
       </div>
       {% endcomment %}
       <div class="flex flex-col gap-6 mb-1">{% csrf_token %} {{ form }}</div>
->>>>>>> dev
       <button
         type="submit"
         value="Submit"
