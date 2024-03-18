@@ -5,19 +5,24 @@ import time
 import queue
 from queue import Queue
 
+from tasks.queue_class import Queues
 from tasks.stack_class import Stack
 from .models import Task
 from .forms import TaskForm
 from django.views.generic import ListView, DetailView, \
     CreateView, UpdateView, DeleteView
 
-listTask = []
-listTask = Task.objects.all().order_by("date")
-listTrier = Task.objects.all().order_by("priority")
 
+listTaskDate = Task.objects.all().order_by("date")
+listTaskPriority = Task.objects.all().order_by("priority")
+
+queue_task = Queues()
 stack_task = Stack()
 
-for task in listTrier[::-1]:
+for task  in  listTaskDate:
+    queue_task.add_task(task)
+
+for task in listTaskPriority[::-1]:
     stack_task.add_task(task)
     
 
@@ -52,7 +57,7 @@ for task in  listTask:
 
 
 
-for task in listTask:
+for task in queue_task.get_all():
       print(task)
     
     
@@ -63,11 +68,18 @@ class TaskListView(ListView):
     model = Task
     context_object_name = 'listTask'
     
-# class TaskListView(ListView):
-#     model = Task
-#     context_object_name = 'listTask'
-#     queryset = stack_task.get_all()
-#     template_name = "tasks/task_list.html"
+class TaskListViewPriority(ListView):
+    model = Task
+    context_object_name = 'listTask'
+    queryset = stack_task.get_all()
+    template_name = "tasks/sort/task_list_priority.html"
+    
+    
+class TaskListViewDate(ListView):
+    model = Task
+    context_object_name = 'listTask'
+    queryset = queue_task.get_all()
+    template_name = "tasks/sort/task_list_date.html"
     
     
 class TaskDetailView(DetailView):
