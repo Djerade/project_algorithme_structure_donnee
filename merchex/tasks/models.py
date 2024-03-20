@@ -4,7 +4,7 @@ import datetime
 # Create your models here.
 
 class Priority(models.TextChoices):
-    VERY_IMPORTANT = 'v', "élévée"
+    VERY_IMPORTANT = 'v', "élevée"
     IMPORTANT = 'i', "moyenne"
     LESS= 'l', "faible"
     

@@ -12,7 +12,7 @@ from .forms import TaskForm
 from django.views.generic import ListView, DetailView, \
     CreateView, UpdateView, DeleteView
 
-
+listTask = Task.objects.all()
 listTaskDate = Task.objects.all().order_by("date")
 listTaskPriority = Task.objects.all().order_by("priority")
 
@@ -26,14 +26,13 @@ for task in listTaskPriority[::-1]:
     stack_task.add_task(task)
     
 
-listTask = stack_task.items
+# listTask = stack_task.items
 # print(type(stack_task.items))
     
     # print(x.priority)
 # for task in listTrier:
 #     # print(task.priority)
 #     stack_task.add_task(task)
-
 
 
 
@@ -44,15 +43,15 @@ listObjet = []
 print('--------------------------')
 # for task in listTrier:
 #     print(task.date)
-for task in  listTask:
-    objectTask = {}
-    objectTask["id"]= task.id
-    objectTask["title"]= task.title
-    objectTask["description"]= task.description
-    objectTask["category"]= task.category
-    objectTask["date"]= task.date
-    objectTask["priority"]= task.priority
-    listObjet.append(objectTask)
+# for task in  listTask:
+#     objectTask = {}
+#     objectTask["id"]= task.id
+#     objectTask["title"]= task.title
+#     objectTask["description"]= task.description
+#     objectTask["category"]= task.category
+#     objectTask["date"]= task.date
+#     objectTask["priority"]= task.priority
+#     listObjet.append(objectTask)
     
 
 
@@ -98,4 +97,5 @@ class TaskUpdateView(UpdateView):
 
 class TaskDeleteView(DeleteView):
     model = Task
+    queue_task.delete_task()
     success_url = reverse_lazy('tasks:task_list')
